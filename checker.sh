@@ -3,8 +3,7 @@
 # Begin JSON
 echo '{'
 
-################################## 
-# Hostname
+################################## # Hostname
 HOSTNAME=`hostname`
 echo '"hostname": "'$HOSTNAME'",'
 
@@ -47,7 +46,7 @@ echo '},'
 
 # Package List
 
-echo wget -q -O - https://raw.githubusercontent.com/cloneko/niseohai/master/rpm.sh
+wget -q -O - https://raw.githubusercontent.com/cloneko/niseohai/master/rpm.sh | sh
 
 ##########################################################
 # End JSON
