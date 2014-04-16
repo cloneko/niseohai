@@ -45,6 +45,10 @@ echo '"network":{'
 echo $IPADDRESS 
 echo '},'
 
+# Package List
+
+echo wget -q -O - https://raw.githubusercontent.com/cloneko/niseohai/master/rpm.sh
+
 ##########################################################
 # End JSON
 echo '}'
