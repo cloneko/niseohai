@@ -1,5 +1,7 @@
 #!/bin/sh
 
+WGETOPT='--no-check-certificate'
+
 # Begin JSON
 echo '{'
 
@@ -36,7 +38,7 @@ echo $DISKS
 echo '},'
 
 # IP Address
-IPADDRESS=`ip addr | grep inet | grep brd | awk '{print "\""$7"\":{\"ipv4\": \""$2"\",\"broadcast\": \""$4"\"},"}'  `
+IPADDRESS=`/sbin/ip addr | grep inet | grep brd | awk '{print "\""$7"\":{\"ipv4\": \""$2"\",\"broadcast\": \""$4"\"},"}'  `
 
 IPADDRESS=`echo $IPADDRESS | sed 's/,$//'`
 
@@ -46,7 +48,7 @@ echo '},'
 
 # Package List
 
-wget -q -O - https://raw.githubusercontent.com/cloneko/niseohai/master/rpm.sh | sh
+wget $WGETOPT -q -O - https://raw.githubusercontent.com/cloneko/niseohai/master/rpm.sh | sh
 
 ##########################################################
 # End JSON
