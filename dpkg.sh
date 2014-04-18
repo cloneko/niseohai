@@ -5,4 +5,4 @@ DPKG=`echo $DPKG | sed 's/,$//'`
 
 echo '"package": {'
 echo $DPKG
-echo '}'
+echo '},'

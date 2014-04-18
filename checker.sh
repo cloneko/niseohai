@@ -50,6 +50,29 @@ echo '},'
 
 wget $WGETOPT -q -O - https://raw.githubusercontent.com/cloneko/niseohai/master/rpm.sh | sh
 
+
+# Dist
+DIST=""
+
+if test -e /etc/redhat-release ; then
+	DIST=`cat /etc/redhat-release`
+else
+	if test -e /etc/turbolinux-release ; then
+		DIST=`cat /etc/turbolinux-release`
+	else
+		if test -e /etc/system-release ; then
+			DIST=`cat /etc/turbolinux-release`
+		else
+			DIST='Unknown'
+		fi
+	fi
+fi
+
+echo '"os":{'
+echo "\"kernel\": \"linux\","
+echo "\"distribution\": \"$DIST \""
+echo '}'
+
 ##########################################################
 # End JSON
 echo '}'
