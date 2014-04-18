@@ -3,7 +3,7 @@
 WGETOPT='--no-check-certificate'
 
 # Begin JSON
-echo '{'
+echo '['
 
 ################################## # Hostname
 HOSTNAME=`hostname`
@@ -75,4 +75,4 @@ echo '}'
 
 ##########################################################
 # End JSON
-echo '}'
+echo ']'
