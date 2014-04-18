@@ -32,7 +32,7 @@ echo '},'
 
 # Disk Size
 echo '"disk":{'
-DISKS=`egrep '(sd[a-f]|id[a-f])[0-9]$' /proc/partitions | awk '{print "\""$4"\":"$3","}'`
+DISKS=`egrep '(sd[a-f]|id[a-f])[0-9]?$' /proc/partitions | awk '{print "\""$4"\":"$3","}'`
 DISKS=`echo $DISKS | sed 's/,$//'`
 echo $DISKS
 echo '},'
