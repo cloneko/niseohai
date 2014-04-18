@@ -61,7 +61,7 @@ else
 		DIST=`cat /etc/turbolinux-release`
 	else
 		if test -e /etc/system-release ; then
-			DIST=`cat /etc/turbolinux-release`
+			DIST=`cat /etc/system-release`
 		else
 			DIST='Unknown'
 		fi
